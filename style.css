@@ -61,14 +61,14 @@ nav {
     gap: 18px;
 }
 
-nav a {
+nav > a {
     color: white;
     text-decoration: none;
     transition: 0.3s;
     white-space: nowrap;
 }
 
-nav a:hover {
+nav > a:hover {
     color: #4da3ff;
 }
 
@@ -79,6 +79,7 @@ nav a:hover {
 
 .catalog-wrapper {
     position: relative;
+    z-index: 9999;
 }
 
 .catalog-btn {
@@ -90,6 +91,8 @@ nav a:hover {
     cursor: pointer;
 
     padding: 8px 5px;
+
+    white-space: nowrap;
 }
 
 .catalog-btn:hover {
@@ -99,7 +102,7 @@ nav a:hover {
 .catalog-menu {
     position: absolute;
 
-    top: 45px;
+    top: calc(100% + 8px);
     left: 0;
 
     width: 220px;
@@ -108,26 +111,31 @@ nav a:hover {
 
     border-radius: 12px;
 
-    padding: 10px;
+    padding: 8px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 
     display: none;
+
+    z-index: 99999;
 }
 
 .catalog-menu.active {
     display: block;
 }
 
-.catalog-menu button {
+.catalog-menu a {
+    display: block;
+
     width: 100%;
 
+    box-sizing: border-box;
+
     background: transparent;
-    border: none;
 
     color: white;
 
-    text-align: left;
+    text-decoration: none;
 
     padding: 12px;
 
@@ -136,10 +144,13 @@ nav a:hover {
     cursor: pointer;
 
     font-size: 15px;
+
+    transition: 0.2s;
 }
 
-.catalog-menu button:hover {
+.catalog-menu a:hover {
     background: #4da3ff;
+    color: white;
 }
 
 
@@ -819,7 +830,7 @@ body.dark-theme .category {
         gap: 7px;
     }
 
-    nav a,
+    nav > a,
     .catalog-btn {
         font-size: 13px;
     }
@@ -883,7 +894,7 @@ body.dark-theme .category {
         gap: 5px;
     }
 
-    nav a,
+    nav > a,
     .catalog-btn {
         font-size: 12px;
     }
@@ -994,7 +1005,7 @@ body.dark-theme .category {
         font-size: 20px;
     }
 
-    nav a,
+    nav > a,
     .catalog-btn {
         font-size: 11px;
     }
@@ -1027,46 +1038,51 @@ body.dark-theme .category {
     .download {
         font-size: 14px;
     }
+
 }
 
+
 /* ================================
-   GAME DESCRIPTION (Загальні стилі)
+   GAME DESCRIPTION
 ================================ */
 
 .description {
     font-size: 14px;
-    color: #666;             /* Темніший сірий для світлої теми (добре читається) */
+    color: #666;
+
     line-height: 1.4;
+
     margin-bottom: 12px;
+
     display: -webkit-box;
-    
+
     overflow: hidden;
 }
 
 
 /* ================================
-   DARK THEME SUPPORT
+   DARK THEME DESCRIPTION
 ================================ */
 
-body.dark-theme .game-description {
-    color: #aaa;             /* Світло-сірий для темної теми */
+body.dark-theme .description {
+    color: #aaa;
 }
 
-
-/* ================================
-   MEDIA QUERIES (Адаптивність)
-================================ */
 
 @media (max-width: 500px) {
-    .game-description {
+
+    .description {
         font-size: 13px;
-        
     }
+
 }
 
+
 @media (max-width: 360px) {
-    .game-description {
+
+    .description {
         font-size: 12px;
         margin-top: 4px;
     }
+
 }
