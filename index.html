@@ -384,19 +384,14 @@
 <!-- Модальне вікно кошика -->
 <div class="cart-modal" id="cartModal">
     <div class="cart-content">
-        <div class="cart-header">
-            <h2>Твій кошик</h2>
-            <button class="close-cart" id="closeCart">&times;</button>
+        <button class="close-cart" id="closeCart">&times;</button>
+        <h2>Ваш кошик 🛒</h2>
+        <div id="cartItems"></div>
+        <div class="cart-total">
+            <span>Разом:</span>
+            <span><span id="cartTotalPrice">0</span> ₴</span>
         </div>
-        <div class="cart-items" id="cartItems">
-            <!-- Товари додаватимуться через JS -->
-        </div>
-        <div class="cart-footer">
-            <div class="cart-total">
-                Загалом: <span id="cartTotalPrice">0</span> ₴
-            </div>
-            <button class="checkout-btn" id="checkoutBtn">Оформити замовлення</button>
-        </div>
+        <button id="checkoutBtn">Оформити замовлення</button>
     </div>
 </div>
 
