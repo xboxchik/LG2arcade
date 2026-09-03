@@ -1184,4 +1184,40 @@ body.dark-theme .description {
 
 #checkoutBtn:hover {
     background: #e03e4d;
+}/* Модальний оверлей */
+.cart-modal {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.cart-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+/* Вікно кошика */
+.cart-modal-body {
+    background: #18181c;
+    color: #ffffff;
+    border: 2px solid #ff4655;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    padding: 24px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(255, 70, 85, 0.3);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.cart-modal.active .cart-modal-body {
+    transform: scale(1);
 }
